@@ -188,6 +188,8 @@ CFLAGS += -DSDL_OVERLAY_2X -DSDL_BUFFER_3X -DSDL_REDRAW_EVT
 OBJS += platform/linux/plat.o platform/linux/emu.o platform/linux/blit.o # FIXME
 ifeq "$(use_inputmap)" "1"
 OBJS += platform/common/plat_sdl.o platform/opendingux/inputmap.o
+else ifeq "$(use_inputmap)" "koriki"
+OBJS += platform/common/plat_sdl.o platform/koriki/inputmap.o
 else
 OBJS += platform/common/plat_sdl.o platform/common/inputmap_kbd.o
 endif
